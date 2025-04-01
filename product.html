@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - GlassMart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="glass-nav">
+          <div class="logo">GlassMart</div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="cart.html">Cart <span id="cart-count">0</span></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="product-detail glass-card" id="product-detail">
+          <!-- Product details will be loaded here via JavaScript -->
+        </section>
+      </main>
+
+      <footer class="glass-card">
+        <p>&copy; 2023 GlassMart. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/product-detail.js"></script>
+  </body>
+</html>

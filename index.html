@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlassMart - Shop with Style</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="glass-nav">
+          <div class="logo">GlassMart</div>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li>
+              <a href="cart.html">Cart <span id="cart-count">0</span></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero glass-card">
+          <h1>Welcome to GlassMart</h1>
+          <p>Experience the beauty of glassmorphic shopping</p>
+        </section>
+
+        <section class="products">
+          <h2>Featured Products</h2>
+          <div class="product-grid" id="product-grid">
+            <!-- Products will be loaded here via JavaScript -->
+          </div>
+        </section>
+      </main>
+
+      <footer class="glass-card">
+        <p>&copy; 2023 GlassMart. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

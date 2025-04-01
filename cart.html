@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - GlassMart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="glass-nav">
+          <div class="logo">GlassMart</div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="cart.html" class="active"
+                >Cart <span id="cart-count">0</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="cart-items glass-card" id="cart-items">
+          <h2>Your Cart</h2>
+          <div id="cart-list">
+            <!-- Cart items will be loaded here via JavaScript -->
+          </div>
+          <div class="cart-summary">
+            <div class="cart-total">
+              <h3>Total: $<span id="cart-total">0.00</span></h3>
+            </div>
+            <button class="btn btn-primary" id="checkout-btn">
+              Proceed to Checkout
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="glass-card">
+        <p>&copy; 2023 GlassMart. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
