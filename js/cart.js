@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (cart.length > 0) {
                     window.location.href = 'checkout.html';
                 } else {
-                    alert('Your cart is empty. Add some products first!');
+                    alert(getTranslation('cart_empty_alert'));
                 }
             });
         }
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cart.length === 0) {
             cartList.innerHTML = `
                 <div class="empty-cart">
-                    <p>Your cart is empty</p>
-                    <a href="index.html" class="btn btn-primary">Start Shopping</a>
+                    <p>${getTranslation('cart_empty')}</p>
+                    <a href="index.html" class="btn btn-primary">${getTranslation('cart_start_shopping')}</a>
                 </div>
             `;
             cartTotal.textContent = '0.00';

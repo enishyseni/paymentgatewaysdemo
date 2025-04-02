@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button id="increase-quantity">+</button>
                 </div>
                 
-                <button class="btn btn-primary" id="add-to-cart-btn">Add to Cart</button>
-                <button class="btn btn-secondary" id="back-to-shopping">Continue Shopping</button>
+                <button class="btn btn-primary" id="add-to-cart-btn">${getTranslation('add_to_cart_btn')}</button>
+                <button class="btn btn-secondary" id="back-to-shopping">${getTranslation('continue_shopping')}</button>
             </div>
         `;
         
@@ -70,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show add to cart notification
             const notification = document.createElement('div');
             notification.className = 'notification';
-            notification.innerHTML = `<p>${quantity} ${product.name}(s) added to cart!</p>`;
+            notification.innerHTML = `<p>${formatTranslation('added_to_cart', {
+                quantity: quantity,
+                product: product.name
+            })}</p>`;
             document.body.appendChild(notification);
             
             setTimeout(() => {

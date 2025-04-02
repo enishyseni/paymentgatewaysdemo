@@ -49,6 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // Translate select options
+    const countrySelect = document.getElementById('country');
+    if (countrySelect) {
+        Array.from(countrySelect.options).forEach(option => {
+            const i18nKey = option.getAttribute('data-i18n');
+            if (i18nKey) {
+                option.textContent = getTranslation(i18nKey);
+            }
+        });
+    }
+    
     // Form validation
     const billingForm = document.getElementById('billing-form');
     

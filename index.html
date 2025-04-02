@@ -16,22 +16,28 @@
         <nav class="glass-nav">
           <div class="logo">GlassMart</div>
           <ul>
-            <li><a href="index.html" class="active">Home</a></li>
             <li>
-              <a href="cart.html">Cart <span id="cart-count">0</span></a>
+              <a href="index.html" class="active" data-i18n="nav_home">Home</a>
             </li>
+            <li>
+              <a href="cart.html" data-i18n="nav_cart">Cart</a>
+              <span id="cart-count">0</span>
+            </li>
+            <!-- Language switcher will be added here via JavaScript -->
           </ul>
         </nav>
       </header>
 
       <main>
         <section class="hero glass-card">
-          <h1>Welcome to GlassMart</h1>
-          <p>Experience the beauty of glassmorphic shopping</p>
+          <h1 data-i18n="hero_title">Welcome to GlassMart</h1>
+          <p data-i18n="hero_description">
+            Experience the beauty of glassmorphic shopping
+          </p>
         </section>
 
         <section class="products">
-          <h2>Featured Products</h2>
+          <h2 data-i18n="products_title">Featured Products</h2>
           <div class="product-grid" id="product-grid">
             <!-- Products will be loaded here via JavaScript -->
           </div>
@@ -39,10 +45,14 @@
       </main>
 
       <footer class="glass-card">
-        <p>&copy; 2023 GlassMart. All rights reserved.</p>
+        <p data-i18n="footer_text">
+          &copy; 2023 GlassMart. All rights reserved.
+        </p>
       </footer>
     </div>
 
+    <script src="js/translations.js"></script>
+    <script src="js/language-switcher.js"></script>
     <script src="js/products.js"></script>
     <script src="js/main.js"></script>
   </body>

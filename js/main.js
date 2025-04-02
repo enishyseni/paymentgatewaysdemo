@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="product-price">$${product.price.toFixed(2)}</p>
                     <p class="product-description">${product.description}</p>
                     <div class="product-actions">
-                        <button class="btn btn-secondary view-product" data-id="${product.id}">View Details</button>
-                        <button class="btn btn-primary add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        <button class="btn btn-secondary view-product" data-id="${product.id}">${getTranslation('product_view')}</button>
+                        <button class="btn btn-primary add-to-cart" data-id="${product.id}">${getTranslation('product_add')}</button>
                     </div>
                 </div>
             `;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Show add to cart animation or notification
                 const notification = document.createElement('div');
                 notification.className = 'notification';
-                notification.innerHTML = `<p>Product added to cart!</p>`;
+                notification.innerHTML = `<p>${getTranslation('product_added')}</p>`;
                 document.body.appendChild(notification);
                 
                 setTimeout(() => {

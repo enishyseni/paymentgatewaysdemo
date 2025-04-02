@@ -540,3 +540,105 @@ footer {
     flex-wrap: wrap;
   }
 }
+
+/* Language Switcher */
+.lang-switcher {
+  position: relative;
+  margin-left: 20px;
+  z-index: 1000; /* Added z-index to make sure the entire language switcher is above other elements */
+}
+
+.lang-switcher-btn {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.lang-switcher-btn i {
+  margin-left: 5px;
+}
+
+.lang-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 var(--shadow);
+  padding: 10px 0;
+  min-width: 120px; /* Increased z-index from 100 to 1000 */
+  z-index: 100;
+  display: none;
+}
+
+.lang-options.show {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+.lang-option {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.lang-option.active {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.lang-option img {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 var(--shadow);
+  padding: 15px 20px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}

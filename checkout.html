@@ -18,67 +18,105 @@
         <nav class="glass-nav">
           <div class="logo">GlassMart</div>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li>
-              <a href="cart.html">Cart <span id="cart-count">0</span></a>
+              <a href="cart.html" data-i18n="nav_cart">Cart</a>
+              <span id="cart-count">0</span>
             </li>
+            <!-- Language switcher will be added here via JavaScript -->
           </ul>
         </nav>
       </header>
 
       <main>
         <section class="checkout glass-card">
-          <h2>Checkout</h2>
+          <h2 data-i18n="checkout_title">Checkout</h2>
           <div class="checkout-summary">
-            <h3>Order Summary</h3>
+            <h3 data-i18n="order_summary">Order Summary</h3>
             <div id="checkout-items">
               <!-- Checkout items will be loaded here via JavaScript -->
             </div>
             <div class="checkout-total">
-              <h4>Total: $<span id="checkout-total">0.00</span></h4>
+              <h4>
+                <span data-i18n="checkout_total">Total:</span> $<span
+                  id="checkout-total"
+                  >0.00</span
+                >
+              </h4>
             </div>
           </div>
 
           <div class="billing-info">
-            <h3>Billing Information</h3>
+            <h3 data-i18n="billing_info">Billing Information</h3>
             <form id="billing-form">
               <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" required />
+                <label for="name" data-i18n="full_name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  data-i18n-placeholder="full_name"
+                />
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required />
+                <label for="email" data-i18n="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  data-i18n-placeholder="email"
+                />
               </div>
               <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" required />
+                <label for="address" data-i18n="address">Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  required
+                  data-i18n-placeholder="address"
+                />
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="city">City</label>
-                  <input type="text" id="city" required />
+                  <label for="city" data-i18n="city">City</label>
+                  <input
+                    type="text"
+                    id="city"
+                    required
+                    data-i18n-placeholder="city"
+                  />
                 </div>
                 <div class="form-group">
-                  <label for="zip">ZIP Code</label>
-                  <input type="text" id="zip" required />
+                  <label for="zip" data-i18n="zip">ZIP Code</label>
+                  <input
+                    type="text"
+                    id="zip"
+                    required
+                    data-i18n-placeholder="zip"
+                  />
                 </div>
               </div>
               <div class="form-group">
-                <label for="country">Country</label>
+                <label for="country" data-i18n="country">Country</label>
                 <select id="country" required>
-                  <option value="">Select a country</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="AU">Australia</option>
+                  <option value="" data-i18n="select_country">
+                    Select a country
+                  </option>
+                  <option value="US" data-i18n="country_us">
+                    United States
+                  </option>
+                  <option value="CA" data-i18n="country_ca">Canada</option>
+                  <option value="UK" data-i18n="country_uk">
+                    United Kingdom
+                  </option>
+                  <option value="AU" data-i18n="country_au">Australia</option>
                 </select>
               </div>
             </form>
           </div>
 
           <div class="payment-methods">
-            <h3>Payment Method</h3>
+            <h3 data-i18n="payment_method">Payment Method</h3>
             <div class="payment-tabs">
               <button class="payment-tab active" data-target="stripe-payment">
                 Stripe
@@ -92,18 +130,26 @@
               <div id="stripe-payment" class="payment-panel active">
                 <form id="stripe-form">
                   <div class="form-group">
-                    <label for="card-element">Credit or Debit Card</label>
+                    <label for="card-element" data-i18n="card_label"
+                      >Credit or Debit Card</label
+                    >
                     <div id="card-element" class="glass-input"></div>
                     <div id="card-errors" class="error" role="alert"></div>
                   </div>
-                  <button id="stripe-submit" class="btn btn-primary">
+                  <button
+                    id="stripe-submit"
+                    class="btn btn-primary"
+                    data-i18n="pay_with_stripe"
+                  >
                     Pay with Stripe
                   </button>
                 </form>
               </div>
 
               <div id="paypal-payment" class="payment-panel">
-                <p>Click the PayPal button to complete your purchase:</p>
+                <p data-i18n="pay_with_paypal">
+                  Click the PayPal button to complete your purchase:
+                </p>
                 <div id="paypal-button-container"></div>
               </div>
             </div>
@@ -112,10 +158,14 @@
       </main>
 
       <footer class="glass-card">
-        <p>&copy; 2023 GlassMart. All rights reserved.</p>
+        <p data-i18n="footer_text">
+          &copy; 2023 GlassMart. All rights reserved.
+        </p>
       </footer>
     </div>
 
+    <script src="js/translations.js"></script>
+    <script src="js/language-switcher.js"></script>
     <script src="js/products.js"></script>
     <script src="js/checkout.js"></script>
     <script src="js/payment.js"></script>

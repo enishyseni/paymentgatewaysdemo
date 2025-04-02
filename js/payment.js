@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Get billing info
                 const billingInfo = JSON.parse(sessionStorage.getItem('billing-info') || '{}');
                 if (!billingInfo.name || !billingInfo.email || !billingInfo.address) {
-                    alert('Please fill in all billing information.');
+                    alert(getTranslation('billing_alert'));
                     return;
                 }
                 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Show processing message
                     const cardErrors = document.getElementById('card-errors');
-                    cardErrors.textContent = 'Processing payment...';
+                    cardErrors.textContent = getTranslation('processing_payment');
                     
                     // Simulate processing delay
                     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -98,18 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
             onApprove: function(data, actions) {
                 // Capture the order
                 return actions.order.capture().then(function(details) {
-                    handleSuccessfulPayment(`Payment completed with PayPal! Transaction ID: ${details.id}`);
+                    handleSuccessfulPayment(formatTranslation('payment_success_paypal', { id: details.id }));
                 });
             },
             onError: function(err) {
                 console.error('PayPal error:', err);
-                alert('There was an error processing your PayPal payment. Please try again.');
+                alert(getTranslation('payment_error'));
             }
         }).render('#paypal-button-container');
     }
     
     // Handle successful payment (both Stripe and PayPal)
-    function handleSuccessfulPayment(message = 'Payment processed successfully!') {
+    function handleSuccessfulPayment(message = getTranslation('payment_success')) {
         // Clear cart
         clearCart();
         
@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
             checkoutSection.innerHTML = `
                 <div class="payment-success glass-card">
                     <i class="fas fa-check-circle success-icon"></i>
-                    <h2>Thank You!</h2>
+                    <h2>${getTranslation('thank_you')}</h2>
                     <p>${message}</p>
-                    <p>Your order has been placed successfully.</p>
-                    <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+                    <p>${getTranslation('order_success')}</p>
+                    <a href="index.html" class="btn btn-primary">${getTranslation('continue_shopping_btn')}</a>
                 </div>
             `;
         }
